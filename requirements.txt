@@ -1,21 +1,17 @@
 pandas
 flask
 numpy
-scikit-learngi
-sklearn
+scikit-learn
 xgboost
-yaml
 flask-cors
 gunicorn
 PyYAML
 dill
 pymongo[srv]
 dnspython
-xgboost
 optuna
 evidently
-skopt
 scikit-optimize
 optuna
 gunicorn
--e.
+-e .
