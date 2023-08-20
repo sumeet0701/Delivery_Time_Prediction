@@ -1,6 +1,6 @@
-from time.exception import CustomException
-from time.constant import *
-from time.logger import logging
+from delivery_time.exception import CustomException
+from delivery_time.constant import *
+from delivery_time.logger import logging
 import pymongo
 import pandas as pd
 import os, sys

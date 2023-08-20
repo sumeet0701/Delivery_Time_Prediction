@@ -1,10 +1,10 @@
-from time.logger import logging
-from time.exception import CustomException
-from time.constant import *
-from time.config.Configuration import Configuration
-from time.entity.config_entity import DataIngestionConfig
-from time.entity.artifact_entity import DataIngestionArtifact
-from time.components.db_operation import MongoDB
+from delivery_time.logger import logging
+from delivery_time.exception import CustomException
+from delivery_time.constant import *
+from delivery_time.config.Configuration import Configuration
+from delivery_time.entity.config_entity import DataIngestionConfig
+from delivery_time.entity.artifact_entity import DataIngestionArtifact
+from delivery_time.components.db_operation import MongoDB
 
 from ast import expr_context
 from operator import index

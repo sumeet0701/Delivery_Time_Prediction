@@ -1,11 +1,11 @@
 
 import yaml
-from time.exception import CustomException
+from delivery_time.exception import CustomException
 import os,sys
 import dill
 import pandas as pd
 import numpy as np
-from time.constant import *
+from delivery_time.constant import *
 
 def write_yaml_file(file_path:str,data:dict=None):
     """

@@ -1,15 +1,15 @@
-from time.entity.config_entity import DataIngestionConfig
-from time.entity.config_entity import DataValidationConfig
-from time.entity.config_entity import DataTransformationConfig
-from time.entity.config_entity import ModelPusherConfig
-from time.entity.config_entity import ModelEvaluationConfig
-from time.entity.config_entity import ModelTrainerConfig
-from time.entity.config_entity import TrainingPipelineConfig
+from delivery_time.entity.config_entity import DataIngestionConfig
+from delivery_time.entity.config_entity import DataValidationConfig
+from delivery_time.entity.config_entity import DataTransformationConfig
+from delivery_time.entity.config_entity import ModelPusherConfig
+from delivery_time.entity.config_entity import ModelEvaluationConfig
+from delivery_time.entity.config_entity import ModelTrainerConfig
+from delivery_time.entity.config_entity import TrainingPipelineConfig
 
-from time.constant import *
-from time.utils.utils import read_yaml_file
-from time.exception import CustomException
-from time.logger import logging
+from delivery_time.constant import *
+from delivery_time.utils.utils import read_yaml_file
+from delivery_time.exception import CustomException
+from delivery_time.logger import logging
 import os, sys
 
 class Configuration:
