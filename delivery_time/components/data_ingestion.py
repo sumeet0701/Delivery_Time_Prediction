@@ -37,25 +37,25 @@ class DataIngestion:
         """
         try:
             # Extracting remote url to download dataset files
-            logging.info("# Extracting remote url to download dataset files")
             download_url = self.data_ingestion_config.dataset_download_url
 
-            # folder location to download zipped files 
-            logging.info("folder location to download zipped files")
+            # folder location to download zipped file
             tgz_download_dir = self.data_ingestion_config.tgz_download_dir
 
             if os.path.exists(tgz_download_dir):
                 os.remove(tgz_download_dir)
-            os.makedirs(tgz_download_dir, exist_ok=True)
+            os.makedirs(tgz_download_dir,exist_ok=True)
 
-            file_name = os.path.basename(download_url)
-            tgz_file_path = os.path.join(tgz_download_dir, file_name)
+            #file_name = os.path.basename(download_url)
+            file_name = "Delivery Time prediction.zip"
+            tgz_file_path = os.path.join(tgz_download_dir,file_name)
 
             logging.info(f"Downloading file from: [{download_url}] into : [{tgz_file_path}]")
             urllib.request.urlretrieve(download_url,tgz_file_path)
             logging.info(f"File: [{tgz_file_path}] has been downloaded successfully")
 
             return tgz_file_path
+
         except Exception as e:
             raise CustomException(e,sys) from e
         
@@ -81,7 +81,7 @@ class DataIngestion:
     def data_merge_and_split(self):
         try:
             raw_data_dir = self.data_ingestion_config.raw_data_dir  # Location for extracted data files
-            
+            logging.info(print(raw_data_dir))
             file_name = os.listdir(raw_data_dir)[0]
             data_file_path = os.path.join(raw_data_dir,file_name)
             
@@ -90,7 +90,7 @@ class DataIngestion:
             
             # Reading each data files and dumping it into DB
             for file in os.listdir(data_file_path):
-                data = pd.read_csv(os.path.join(data_file_path,file))
+                data = pd.read_excel(os.path.join(data_file_path,file))
                 data_dict = data.to_dict("records")
                 logging.info(f"Inserting file: [{file}] into DB")
                 self.db.insertall(data_dict)

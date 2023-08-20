@@ -5,7 +5,7 @@ import os
 def main():
     try:
         pipeline = Training_Pipeline()
-        pipeline.run_pipeline()
+        pipeline.run_training_pipeline()
 
     except Exception as e:
             logging.error(f"{e}")

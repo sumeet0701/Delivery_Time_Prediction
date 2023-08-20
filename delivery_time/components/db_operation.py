@@ -9,10 +9,10 @@ import os, sys
 class MongoDB:
     def __init__(self):
         try:
-            self.client = pymongo.MongoClient(DATABASE_CLIENT_URL_KEY, tls = True, tlsAllowInvalidCertificates=True)
+            self.client = pymongo.MongoClient(DATABASE_CLIENT_URL_KEY)
             logging.info("***************************Connection with DB created successfully!!!***************************")
             self.db = self.client[DATABASE_NAME_KEY]
-            self.collection = DATABASE_COLLECTION_NAME_KEY
+            self.collection_name = DATABASE_COLLECTION_NAME_KEY
         except Exception as e:
             raise CustomException(e,sys) from e
         
@@ -20,7 +20,7 @@ class MongoDB:
     def create_and_check_collection(self, coll_name:str = None)-> None:
         try:
             
-            if coll_name in None:
+            if coll_name is None:
                 # Checking whether the main collection already exist or not, if does then delete it
                 logging.info("Checking whether the main collection already exist or not, if does then delete it")
                 if self.collection_name in self.db.list_collection_names():

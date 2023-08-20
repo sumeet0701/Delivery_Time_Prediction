@@ -1,9 +1,6 @@
-from delivery_time.components.model_trainer import ModelTrainer
 from delivery_time.logger import logging
 from delivery_time.exception import CustomException
 from delivery_time.components.data_ingestion import DataIngestion
-from delivery_time.components.data_validation import DataValidation
-from delivery_time.components.data_transformation import DataTransformation
 from delivery_time.config.Configuration import Configuration
 from delivery_time.entity.config_entity import DataIngestionConfig
 from delivery_time.entity.artifact_entity import DataIngestionArtifact
@@ -25,6 +22,7 @@ class Training_Pipeline:
             return data_ingestion.initiate_data_ingestion()
         except Exception as e:
             raise CustomException(e,sys) from e
+        
     def run_training_pipeline(self):
         try:
             data_ingestion_config=self.config.get_data_ingestion_config()

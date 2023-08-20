@@ -45,7 +45,7 @@ DATA_TRANSFORMATION_FEATURE_ENGINEERING_FILE_NAME_KEY ="feature_engineering_obje
 # Database related variables
 DATABASE_CLIENT_URL_KEY = "mongodb://localhost:27017/?readPreference=primary&ssl=false&directConnection=true"
 DATABASE_NAME_KEY = "Delivery_time_Prediction"
-DATABASE_COLLECTION_NAME_KEY = "Time"
+DATABASE_COLLECTION_NAME_KEY = "Time_db"
 DATABASE_TRAINING_COLLECTION_NAME_KEY = "Training"
 DATABASE_TEST_COLLECTION_NAME_KEY = "Test"
 
