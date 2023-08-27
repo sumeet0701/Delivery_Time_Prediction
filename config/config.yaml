@@ -1,5 +1,5 @@
 training_pipeline_config:
-  pipeline_name: rental_bike_demand
+  pipeline_name: Delivery_Time
   artifact_dir: artifact
 
 data_ingestion_config:
