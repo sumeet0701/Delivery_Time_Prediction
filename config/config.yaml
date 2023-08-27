@@ -3,7 +3,7 @@ training_pipeline_config:
   artifact_dir: artifact
 
 data_ingestion_config:
-  dataset_download_url: https://github.com/sumeet0701/data-dump/blob/main/Delivery%20Time%20prediction.zip?raw=true
+  dataset_download_url: https://github.com/sumeet0701/data-dump/blob/main/Zomato%20Delivery%20Time%20Prediction.zip?raw=true
   raw_data_dir: raw_data
   tgz_download_dir: tgz_data
   ingested_dir: ingested_data
